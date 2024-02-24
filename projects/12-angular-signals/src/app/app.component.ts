@@ -6,6 +6,7 @@ import { Todo } from './todo';
   selector: 'app-root',
   standalone: true,
   imports: [CommonModule],
+
   template: `
     <h1>Building a TODO List</h1>
     @for(todo of todos(); track todo.id) {
@@ -57,4 +58,11 @@ export class AppComponent {
       })
     );
   }
+=======
+  template: ` <h1>Building a TODO List</h1> `,
+  styles: `label { display: block }`,
+})
+export class AppComponent {
+  updateTodo(todo: Todo) {}
+
 }
