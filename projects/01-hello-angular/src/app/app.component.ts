@@ -9,12 +9,18 @@ import { RouterOutlet } from '@angular/router';
   template: `
     <h1>If you are reading this...</h1>
     <p>Things have worked out well! 🎉</p>
+    <p>my favorite movies</p>
     <ol>
-      <li>Masters of Puppets</li>
-      <li>Cool Nights and Company</li>
-      <li>In Shallow Seas We Sail</li>
+      <li>Spider-man Into The Spider Verse</li>
+      <li>Matrix</li>
+      <li>Pirate of Caribbean</li>
     </ol>
   `,
-  styles: ``,
+  styles: `ol {
+  list-style-type: upper-roman;
+  
+  }`,
 })
-export class AppComponent {}
+export class AppComponent {
+  user = 'codingChamp';
+}
