@@ -15,17 +15,28 @@ import { AccountInfo } from './account-info';
         </p>
         <p>Valid Thru: {{ account.validThru }}</p>
         <p>CVV: {{ account.CVV }}</p>
+        <!-- <p>
+        membership status
+        @if(account.membershipStatus === 'gold'){
+        <span class="badge gold">Gold</span>
+        } @else if(account.membershipStatus === 'platinum') {
+        <span class="badge platinum">Platinum</span>
+        } @else {
+        <span class="badge silver">Silver</span>
+        }
+      </p> -->
         <p>
-          <!-- membership status -->
-          @if(account.membershipStatus === 'gold'){
+          @switch (account.membershipStatus) { @case ('gold') {
           <span class="badge gold">Gold</span>
-          } @else if(account.membershipStatus === 'platinum') {
+          }@case ('silver') {
+          <span class="badge silver">Sliver</span>
+          }@case('platinum'){
           <span class="badge platinum">Platinum</span>
-          } @else {
-          <span class="badge silver">Silver</span>
-          }
-          <!-- BONUS IMPLEMENTATION -->
-          <!--
+          } }
+        </p>
+
+        <!-- BONUS IMPLEMENTATION -->
+        <!--
           @switch(account.membershipStatus){ @case('gold') {
           <span class="badge gold">Gold</span>
           } @case('platinum') {
@@ -34,7 +45,6 @@ import { AccountInfo } from './account-info';
           <span class="badge silver">Silver</span>
           } }
           -->
-        </p>
       </section>
     </article>
   `,
@@ -42,8 +52,8 @@ import { AccountInfo } from './account-info';
 })
 export class AppComponent {
   account: AccountInfo = {
-    name: 'Melisa Evan',
-    membershipStatus: 'gold',
+    name: 'Mike Techson',
+    membershipStatus: 'silver',
     validThru: '12/2022',
     CVV: '123',
   };
